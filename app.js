@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 
 const signupRouter = require("./routes/signup");
+const loginRouter = require("./routes/login");
+const validateCredentials = require("./middleware/login");
 
 const app = express();
 const port = 8000;
@@ -20,7 +22,14 @@ app.use((req, res, next) => {
 */
 
 // POST /signup
-app.use("/api/user/signup", signupRouter);
+app.use("/api/admin/signup", signupRouter);
+
+// POST /login
+app.use("/api/admin/login", validateCredentials);
+app.use("/api/admin/login", loginRouter);
+
+// app.use( '/api', accessControl )
+// // accessControl stoppar request till /api/books om man inte har API-nyckel
 
 app.listen(port, () => {
   console.log(`Server is listening to port ${port}...`);
