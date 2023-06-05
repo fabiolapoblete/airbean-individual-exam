@@ -1,0 +1,26 @@
+{
+  "name": "airbean-individual-exam",
+  "version": "1.0.0",
+  "description": "I den individuella delen av Airbean så ska du skapa ett admin-gränssnitt för att hantera menyn. Det ska gå och lägga till och ta bort\r produkter. Båda API-endpoints:en ska vara skyddad med en API-nyckel.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiolapoblete/airbean-individual-exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabiolapoblete/airbean-individual-exam/issues"
+  },
+  "homepage": "https://github.com/fabiolapoblete/airbean-individual-exam#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "nedb-promise": "^2.0.1"
+  }
+}
