@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 router.post("/", async (req, res) => {
   const admin = req.admin;
-  const token = jwt.sign({ username: admin.username }, "a1b1c1", {
+  const token = jwt.sign({ username: admin.username }, "mySuperSecretKey123!", {
     expiresIn: 600,
   });
 

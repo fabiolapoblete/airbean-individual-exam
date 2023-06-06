@@ -1,4 +1,4 @@
-const { findAdmin } = require("../database/utils");
+const { findAdmin } = require("../model/admin");
 const { comparePassword } = require("../bcrypt");
 
 async function validateCredentials(req, res, next) {

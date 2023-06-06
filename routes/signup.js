@@ -1,19 +1,12 @@
 const express = require("express");
 const { hashPassword } = require("../bcrypt");
-const { addNewAdmin } = require("../database/utils");
+const { addNewAdmin } = require("../model/admin");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
   const hashedPassword = await hashPassword(password);
   const key = generateApiKey();
-
-  // const newAdmin = {
-  //   username: username,
-  //   password: hashedPassword,
-  //   role: "admin",
-  //   key: key,
-  // };
 
   addNewAdmin(username, hashedPassword, key);
 
