@@ -5,6 +5,7 @@ const signupRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
 const productsRouter = require("./routes/products");
 const validateCredentials = require("./middleware/login");
+const validateProduct = require("./middleware/products");
 
 const app = express();
 const port = 8000;
@@ -31,6 +32,7 @@ app.use("/api/admin/login", loginRouter);
 
 // GET/POST /products
 app.use("/api/products", productsRouter);
+app.use("/api/products/add", validateProduct);
 app.use("/api/products/add", productsRouter);
 
 // app.use( '/api', accessControl )
