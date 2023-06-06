@@ -10,6 +10,7 @@ async function validateCredentials(req, res, next) {
   if (admin) {
     const matchedPassword = await comparePassword(password, hashedPassword);
     if (matchedPassword) {
+      req.admin = admin;
       next();
     } else {
       res.status(401).send({ message: "Incorrect password" });
