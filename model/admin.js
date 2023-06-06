@@ -3,14 +3,13 @@ const nedb = require("nedb-promise");
 // Create admin database
 const adminDB = new nedb({ filename: "admin.db", autoload: true });
 
-function addNewAdmin(username, hashedPassword, key) {
+function addNewAdmin(username, hashedPassword) {
   adminDB.insert({
     username: username,
     password: hashedPassword,
     role: "admin",
-    key: key,
   });
-  console.log("utils.js: added new user with API key:", key);
+  console.log("utils.js: Added new user");
 }
 
 async function findAdmin(username) {
