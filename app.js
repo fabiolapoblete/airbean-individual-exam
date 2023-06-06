@@ -3,6 +3,7 @@ const cors = require("cors");
 
 const signupRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
+const productsRouter = require("./routes/products");
 const validateCredentials = require("./middleware/login");
 
 const app = express();
@@ -27,6 +28,9 @@ app.use("/api/admin/signup", signupRouter);
 // POST /login
 app.use("/api/admin/login", validateCredentials);
 app.use("/api/admin/login", loginRouter);
+
+// GET /products
+app.use("/api/products", productsRouter);
 
 // app.use( '/api', accessControl )
 // // accessControl stoppar request till /api/books om man inte har API-nyckel
