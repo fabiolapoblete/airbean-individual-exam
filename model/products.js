@@ -20,4 +20,10 @@ async function getProducts() {
   return await productsDB.find({});
 }
 
-module.exports = getProducts;
+function addProduct(product) {
+  const createdAt = new Date();
+  product.createdAt = createdAt.toLocaleString();
+  productsDB.insert({ product });
+}
+
+module.exports = { getProducts, addProduct };

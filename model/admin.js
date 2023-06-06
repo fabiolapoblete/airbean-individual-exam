@@ -9,7 +9,7 @@ function addNewAdmin(username, hashedPassword) {
     password: hashedPassword,
     role: "admin",
   });
-  console.log("utils.js: Added new user");
+  console.log("admin.js: Added new user");
 }
 
 async function findAdmin(username) {

@@ -29,8 +29,9 @@ app.use("/api/admin/signup", signupRouter);
 app.use("/api/admin/login", validateCredentials);
 app.use("/api/admin/login", loginRouter);
 
-// GET /products
+// GET/POST /products
 app.use("/api/products", productsRouter);
+app.use("/api/products/add", productsRouter);
 
 // app.use( '/api', accessControl )
 // // accessControl stoppar request till /api/books om man inte har API-nyckel
