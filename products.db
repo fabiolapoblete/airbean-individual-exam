@@ -11,6 +11,7 @@
 {"product":{"id":"coffee-0lp6ter3bh","title":"Kaffe Latte","desc":"Bryggd på månadens bönor.","price":54},"_id":"EWZSsf8bcbKA7Gsn"}
 {"product":{"id":"1","title":"Kaffe","desc":"hjdhsaf","price":5000,"createdAt":"2023-06-06, 20:14:16"},"_id":"FPwJ0S1FTxXDRP5d"}
 {"product":{"id":"150","title":"Kaffe","desc":"hjdhsaf","price":500,"createdAt":"2023-06-06, 22:33:44"},"_id":"FQPrwjct22JtEtuR"}
+{"product":{"id":"150","title":"Kaffe","desc":"hjdhsaf","price":500,"createdAt":"2023-06-06, 22:44:21"},"_id":"KyfYivrOtrLOPf3V"}
 {"product":{"id":"pastry-vkzh17ct2r","title":"Semla","desc":"En fastlagsbulle i sin rätta form.","price":50},"_id":"QHInrsMitxZv5qWo"}
 {"product":{"id":"150","title":"Kaffe","desc":"hjdhsaf","price":500,"createdAt":"2023-06-06, 22:38:07"},"_id":"SaUfLlDPnJajaUyJ"}
 {"product":{"id":"150","title":"Kaffe","desc":"hjdhsaf","createdAt":"2023-06-06, 20:23:15"},"_id":"TNMA3fvbwpP4tUzA"}
@@ -26,4 +27,4 @@
 {"product":{"id":"150","title":"Kaffe","desc":"hjdhsaf","price":500,"createdAt":"2023-06-06, 22:34:06"},"_id":"wB0Bki5i6aW7e2RW"}
 {"product":{"id":"coffee-4pdksmrkfa","title":"Cappuccino","desc":"Bryggd på månadens bönor.","price":49},"_id":"xYm3A2KeXA0nlTSX"}
 {"product":{"id":"coffee-m2h37k2mnh","title":"Latte Macchiato","desc":"Bryggd på månadens bönor.","price":49},"_id":"y3cBP4CyV0qi9xsS"}
-{"product":{"id":"150","title":"Kaffe","desc":"hjdhsaf","price":500,"createdAt":"2023-06-06, 22:44:21"},"_id":"KyfYivrOtrLOPf3V"}
+{"product":{"id":"150","title":"Kaffe","desc":"hjdhsaf","price":500,"createdAt":"2023-06-07, 09:00:48"},"_id":"YKC0tAq20X4OL18E"}

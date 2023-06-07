@@ -10,12 +10,14 @@ function validateProduct(req, res, next) {
   );
 
   if (hasProperties && noAdditionalProperties) {
-    console.log("hello");
     next();
   } else {
     res
       .status(400)
-      .send({ success: false, message: "Product has wrong format" });
+      .send({
+        success: false,
+        message: "The product you are trying to add is in the wrong format",
+      });
   }
 }
 
