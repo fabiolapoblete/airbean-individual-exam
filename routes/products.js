@@ -1,6 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { getProducts, addProduct, removeProduct } = require("../model/products");
+const {
+  getProducts,
+  addProduct,
+  removeProduct,
+  findProduct,
+  updateProduct,
+} = require("../model/products");
 
 router.get("/", async (req, res) => {
   const products = await getProducts();
@@ -28,12 +34,12 @@ router.delete("/", async (req, res) => {
   res.send({ success: true, message: "Product was removed" });
 });
 
-// router.post("/", async (req, res) => {
-//   //Vilken produkt ska updateras? gå på _id?, vilken parameter?
-//   //Bara tillåtet att skicka med id, title, desc, price
-//   //Lägg till modifiedAt.
-//   //importera funktion updateProduct
-//   const { id, title, desc, price, _id } = req.body;
+router.put("/", async (req, res) => {
+  const productId = req.body._id;
+  const properties = req.body.properties;
 
-// });
+  updateProduct(productId, properties);
+  res.send({ success: true, message: "Product was updated" });
+});
+
 module.exports = router;

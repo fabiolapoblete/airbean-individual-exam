@@ -42,6 +42,10 @@ app.use("/api/products/remove", verifyToken);
 app.use("/api/products/remove", productExists);
 app.use("/api/products/remove", productsRouter);
 
+app.use("/api/products/update", verifyToken);
+app.use("/api/products/update", productExists);
+app.use("/api/products/update", productsRouter);
+
 // app.use( '/api', accessControl )
 // // accessControl stoppar request till /api/books om man inte har API-nyckel
 

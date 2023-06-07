@@ -34,4 +34,22 @@ async function removeProduct(productId) {
   return await productsDB.remove({ _id: productId });
 }
 
-module.exports = { getProducts, addProduct, findProduct, removeProduct };
+async function updateProduct(productId, properties) {
+  const updatedProperties = {};
+  for (const key in properties) {
+    if (properties.hasOwnProperty(key)) {
+      updatedProperties["product." + key] = properties[key];
+    }
+  }
+  updatedProperties["product.modifiedAt"] = new Date().toLocaleString();
+
+  productsDB.update({ _id: productId }, { $set: updatedProperties });
+}
+
+module.exports = {
+  getProducts,
+  addProduct,
+  findProduct,
+  removeProduct,
+  updateProduct,
+};

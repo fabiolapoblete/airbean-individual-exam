@@ -29,7 +29,7 @@ async function productExists(req, res, next) {
   } else {
     res.status(401).send({
       success: false,
-      message: "The product you are trying to remove does not exist",
+      message: "The product with the given id does not exist",
     });
   }
 }
