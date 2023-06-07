@@ -26,4 +26,12 @@ function addProduct(product) {
   productsDB.insert({ product });
 }
 
-module.exports = { getProducts, addProduct };
+async function findProduct(productId) {
+  return await productsDB.findOne({ _id: productId });
+}
+
+async function removeProduct(productId) {
+  return await productsDB.remove({ _id: productId });
+}
+
+module.exports = { getProducts, addProduct, findProduct, removeProduct };
