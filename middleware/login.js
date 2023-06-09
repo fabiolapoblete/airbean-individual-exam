@@ -16,7 +16,7 @@ async function validateCredentials(req, res, next) {
       res.status(401).send({ message: "Incorrect password" });
     }
   } else {
-    res.status(404).send({ message: "Incorrect username" });
+    res.status(401).send({ message: "Incorrect username" });
   }
 }
 

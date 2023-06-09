@@ -30,7 +30,7 @@ async function productExists(req, res, next) {
   if (product) {
     next();
   } else {
-    res.status(401).send({
+    res.status(204).send({
       success: false,
       message: "The product with the given id does not exist",
     });

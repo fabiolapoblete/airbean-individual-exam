@@ -12,15 +12,15 @@ function verifyToken(req, res, next) {
       req.role = data.role;
 
       if (data.role !== "admin") {
-        res.status(403).send({ message: "Access denied" });
+        res.status(403).send({ success: false, message: "Access denied" });
       } else {
         next();
       }
     } catch (error) {
-      res.json({ success: false, error: "Invalid JWT" });
+      res.status(401).send({ success: false, error: "Invalid JWT" });
     }
   } else {
-    res.status(403).json({ message: "No JWT provided." });
+    res.status(401).send({ success: false, message: "No JWT provided." });
   }
 }
 

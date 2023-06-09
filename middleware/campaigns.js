@@ -15,7 +15,7 @@ async function productsExists(req, res, next) {
   if (campaignProducts.length === products.length) {
     next();
   } else {
-    res.status(401).send({
+    res.status(204).send({
       success: false,
       message: "The product with the given id does not exist",
     });
