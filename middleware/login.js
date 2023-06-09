@@ -5,9 +5,9 @@ async function validateCredentials(req, res, next) {
   const { username, password } = req.body;
 
   const admin = await findAdmin(username);
-  const hashedPassword = admin.password;
 
   if (admin) {
+    const hashedPassword = admin.password;
     const matchedPassword = await comparePassword(password, hashedPassword);
     if (matchedPassword) {
       req.admin = admin;
