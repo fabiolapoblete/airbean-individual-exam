@@ -7,7 +7,7 @@ const productsRouter = require("./routes/products");
 const campaignsRouter = require("./routes/campaigns");
 const validateCredentials = require("./middleware/login");
 const { validateProduct, productExists } = require("./middleware/products");
-const verifyToken = require("./middleware/auth");
+const verifyToken = require("./middleware/authorization");
 const productsExists = require("./middleware/campaigns");
 
 const app = express();
