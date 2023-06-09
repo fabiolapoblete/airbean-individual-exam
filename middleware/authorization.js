@@ -2,7 +2,8 @@ const jwt = require("jsonwebtoken");
 const secretKey = "mySuperSecretKey123!";
 
 function verifyToken(req, res, next) {
-  // Hämta JWT från authorization headern
+  // JWT from autorization in header.
+  // Returns role of user
   if (req.headers.authorization) {
     const token = req.headers.authorization.replace("Bearer ", "");
     try {

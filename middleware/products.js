@@ -1,5 +1,7 @@
 const { findProduct } = require("../model/products");
 
+// Middleware to validate given properties of product.
+// Will proceed if correct amount of properties are added.
 function validateProduct(req, res, next) {
   const requiredProperties = ["id", "title", "desc", "price"];
   const bodyProperties = Object.keys(req.body);
@@ -21,6 +23,7 @@ function validateProduct(req, res, next) {
   }
 }
 
+// Middleware to validate that a product exists in the database
 async function productExists(req, res, next) {
   const productId = req.body._id;
   const product = await findProduct(productId);

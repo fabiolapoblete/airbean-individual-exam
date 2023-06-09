@@ -1,16 +1,18 @@
 const express = require("express");
-const router = express.Router();
 const jwt = require("jsonwebtoken");
+
+const router = express.Router();
 
 const secretKey = "mySuperSecretKey123!";
 
+// A token is created and returned when login is successful
 router.post("/", async (req, res) => {
   const admin = req.admin;
   const token = jwt.sign(
     { username: admin.username, role: admin.role },
     secretKey,
     {
-      expiresIn: 6000,
+      expiresIn: 3600, //1h
     }
   );
 

@@ -1,8 +1,9 @@
 const nedb = require("nedb-promise");
 
-// Creates a product database.
+// Create product database.
 const productsDB = new nedb({ filename: "products.db", autoload: true });
-// Import of json file with menu
+
+// Import json file with menu
 const menu = require("../products.json");
 const products = menu.products;
 
@@ -12,10 +13,10 @@ function importProducts() {
     productsDB.insert({ product: product });
   });
 }
+
 // Calling the function one time to fill the products database.
 //importProducts();
 
-// Function to get all products from the products database.
 async function getProducts() {
   return await productsDB.find({});
 }

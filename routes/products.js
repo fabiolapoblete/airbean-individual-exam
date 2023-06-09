@@ -1,12 +1,12 @@
 const express = require("express");
-const router = express.Router();
 const {
   getProducts,
   addProduct,
   removeProduct,
-  findProduct,
   updateProduct,
 } = require("../model/products");
+
+const router = express.Router();
 
 router.get("/", async (req, res) => {
   const products = await getProducts();
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   res.send({ success: true, products: products });
 });
 
-// Router for adding product
+// Router for adding product to database
 router.post("/", async (req, res) => {
   const { id, title, desc, price } = req.body;
   const product = {
@@ -23,17 +23,20 @@ router.post("/", async (req, res) => {
     desc: desc,
     price: price,
   };
+
   addProduct(product);
   res.send({ success: true, message: "Product was added" });
 });
 
-// Router for removing product
+// Router for removing product from database
 router.delete("/", async (req, res) => {
   const productId = req.body._id;
+
   removeProduct(productId);
   res.send({ success: true, message: "Product was removed" });
 });
 
+// Router for updating a product in the database
 router.put("/", async (req, res) => {
   const productId = req.body._id;
   const properties = req.body.properties;

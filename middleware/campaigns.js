@@ -1,5 +1,6 @@
 const { findProduct } = require("../model/products");
 
+// Middleware to validate if given products exists in the product database
 async function productsExists(req, res, next) {
   const campaignProducts = req.body.products;
   const products = [];
