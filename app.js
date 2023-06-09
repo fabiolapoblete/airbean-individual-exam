@@ -4,9 +4,11 @@ const cors = require("cors");
 const signupRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
 const productsRouter = require("./routes/products");
+const campaignsRouter = require("./routes/campaigns");
 const validateCredentials = require("./middleware/login");
 const { validateProduct, productExists } = require("./middleware/products");
 const verifyToken = require("./middleware/auth");
+const productsExists = require("./middleware/campaigns");
 
 const app = express();
 const port = 8000;
@@ -19,11 +21,6 @@ app.use((req, res, next) => {
   next();
 });
 
-/*HÄR FINNS ALLA ROUTES
-
-
-*/
-
 // POST /signup
 app.use("/api/admin/signup", signupRouter);
 
@@ -31,7 +28,7 @@ app.use("/api/admin/signup", signupRouter);
 app.use("/api/admin/login", validateCredentials);
 app.use("/api/admin/login", loginRouter);
 
-// GET/POST/DELETE /products
+// GET/POST/PUT/DELETE /products
 app.use("/api/products", productsRouter);
 
 app.use("/api/products/add", verifyToken);
@@ -46,8 +43,10 @@ app.use("/api/products/update", verifyToken);
 app.use("/api/products/update", productExists);
 app.use("/api/products/update", productsRouter);
 
-// app.use( '/api', accessControl )
-// // accessControl stoppar request till /api/books om man inte har API-nyckel
+// POST /campaigns
+app.use("/api/campaigns/add", verifyToken);
+app.use("/api/campaigns/add", productsExists);
+app.use("/api/campaigns/add", campaignsRouter);
 
 app.listen(port, () => {
   console.log(`Server is listening to port ${port}...`);
